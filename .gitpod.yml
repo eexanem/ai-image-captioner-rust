@@ -1,0 +1,25 @@
+tasks:
+  - name: Setup and Run
+    init: |
+      cargo build --release
+    command: |
+      echo "🎨 AI Image Captioner - Starting..."
+      echo ""
+      echo "Get your FREE Hugging Face API key:"
+      echo "1. Go to https://huggingface.co/settings/tokens"
+      echo "2. Create a new token (read access is enough)"
+      echo "3. Copy the token"
+      echo ""
+      echo "Then run:"
+      echo "export HUGGINGFACE_API_KEY='your_token_here'"
+      echo "cargo run --release"
+      echo ""
+      
+ports:
+  - port: 3000
+    onOpen: open-preview
+    visibility: public
+
+vscode:
+  extensions:
+    - rust-lang.rust-analyzer
